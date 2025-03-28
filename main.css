@@ -1,0 +1,141 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    background-color: #eee;
+    margin: 0;
+}
+
+/* small */
+@media (min-width: 760px) {
+
+    .slider-container,
+    .gallery-container {
+        width: 750px;
+    }
+}
+
+/* medium */
+@media (min-width: 992px) {
+
+    .slider-container,
+    .gallery-container {
+        width: 970px;
+    }
+
+    .gallery-container {
+        padding: 0 22px;
+    }
+}
+
+h1 {
+    padding: 20px;
+    margin: 0 0 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto 0;
+}
+
+.slider {
+    width: 800px;
+    height: 450px;
+    position: relative;
+}
+
+
+.slider .img-id {
+    position: absolute;
+    background-color: black;
+    color: white;
+    left: 15px;
+    top: 15px;
+    z-index: 99;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.slider img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: scale(0.8);
+}
+
+.slider img.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+button {
+    padding: 0 20px;
+    font-size: 20px;
+    border: none;
+    background-color: #9e9e9e;
+    color: white;
+    cursor: pointer;
+    height: 450px;
+    transition: 0.3s;
+    writing-mode: vertical-rl;
+}
+
+button:not(:disabled):hover {
+    background-color: #7e7e7e;
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: no-drop;
+}
+
+.gallery-container {
+    /* width: 800px; */
+    display: grid;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.gallery-container img {
+    max-width: 100%;
+    opacity: 0.4;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.gallery-container img:hover,
+.gallery-container img.active {
+    opacity: 1;
+}
+
+.navigation-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #333;
+}
